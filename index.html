@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		  <meta property="og:title" content="Tanzania Music Awards (TMA) 2024 - Tuzo Za Muziki Tanzania 2024" />
+    <meta property="og:image" itemprop="image" content="https://tanzania-music-awards.github.io/home/logo.png">
+			  <!--Favicon-->
+			  <link rel="shortcut icon" href="tma_logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Piga Kura Vipengele Vya Tuzo: Mwanamuziki Bora Wa Kiume...">
+    <title>Tanzania Music Awards (TMA) 2024 - Tuzo Za Muziki Tanzania 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('tma.gif');
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        header img {
+            width: 300px;
+            height: 200px;
+        }
+        main {
+            padding: 20px;
+        }
+        h1 {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 3em;
+        }
+        h2 {
+            color: #ffffff;
+        }
+        p {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #b40707;
+        }
+
+        h4 {
+            color: #0003cd;
+        }
+        .league {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .category {
+            margin-bottom: 10px;
+        }
+        .category ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .category li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .category button {
+            background-color: #0e0e0e;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .category button:hover {
+            background-color: #004d00;
+        }
+        .submit-votes {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit-votes button {
+            background-color: #0000FF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-votes button:hover {
+            background-color: #0000CC;
+        }
+.preview {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+        }
+        .preview h3 {
+             color: #1c730a;
+            text-align: center;
+        }
+        .preview ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .preview li {
+            margin-bottom: 10px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+    </style>
+    <script>
+        const votes = {};
+
+        function vote(category, name) {
+            votes[category] = name;
+            alert(`Umepiga Kura Kwa ${name} Kipengele Cha ${category} `);
+        }
+
+        function submitVotes() {
+            const previewSection = document.getElementById('preview-section');
+            const overlay = document.getElementById('overlay');
+            const previewList = document.getElementById('preview-list');
+            previewList.innerHTML = '';
+
+            for (const [category, name] of Object.entries(votes)) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `◾${category}: ${name}`;
+                previewList.appendChild(listItem);
+            }
+
+            previewSection.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        function finalSubmit() {
+            alert('Your votes have been submitted! Thank you for voting.');
+            // Add code here to handle final submission of votes (e.g., send to server)
+        }
+
+        function closePreview() {
+            const previewSection = document.getElementById('preview-section');
+            const overlay = document.getElementById('overlay');
+            previewSection.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Tanzania Music Awards (TMA) 2024">
+        <h1>Tanzania Music Awards (TMA) 2024</h1>
+        
+    </header>
+    <main>
+        
+        
+        <section class="league">
+            <h3>Tuzo Za Muziki Tanzania (TMA) 2024</h3>
+            <div class="category">
+                <h4>MWANAMUZIKI BORA WA KIUME WA MWAKA</h4>
+                <ul>
+                    <li>1. Marioo <button onclick="vote('MWANAMUZIKI BORA WA KIUME WA MWAKA', 'Marioo')">Piga Kura</button></li>
+                    <li>2. Diamond Platnumz<button onclick="vote('MWANAMUZIKI BORA WA KIUME WA MWAKA', 'Diamond Platnumz')">Piga Kura</button></li>
+                    <li>3. Harmonize <button onclick="vote('MWANAMUZIKI BORA WA KIUME WA MWAKA', 'Harmonize')">Piga Kura</button></li>
+                    <li>4. Alikiba <button onclick="vote('MWANAMUZIKI BORA WA KIUME WA MWAKA', 'Alikiba')">Piga Kura</button></li>
+                    <li>5. Jay Melody <button onclick="vote('MWANAMUZIKI BORA WA KIUME WA MWAKA', 'Jay Melody')">Piga Kura</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>MWIMBAJI BORA WA KIUME WA BONGO FLAVA WA MWAKA</h4>
+                <ul>
+                    <li>1. Marioo - Love Song <button onclick="vote('MWIMBAJI BORA WA KIUME WA BONGO FLAVA WA MWAKA', 'Marioo')">Piga Kura</button></li>
+                    <li>2. Alikiba - Mahaba <button onclick="vote('MWIMBAJI BORA WA KIUME WA BONGO FLAVA WA MWAKA', 'Alikiba')">Piga Kura</button></li>
+                    <li>3. Jay Melody - Sawa <button onclick="vote('MWIMBAJI BORA WA KIUME WA BONGO FLAVA WA MWAKA', 'Jay Melody')">Piga Kura</button></li>
+                    <li>4. Diamond Platnumz - Yatapita <button onclick="vote('MWIMBAJI BORA WA KIUME WA BONGO FLAVA WA MWAKA', 'Diamond Platnumz')">Piga Kura</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA</h4>
+                <ul>
+                    <li>1. Zuchu <button onclick="vote('MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA', 'Zuchu')">Piga Kura</button></li>
+                    <li>2. Appy <button onclick="vote('MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA', 'Appy')">Piga Kura</button></li>
+                    <li>3. Phina  <button onclick="vote('MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA', 'Phina')">Piga Kura</button></li>
+                    <li>4. Anjella <button onclick="vote('MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA', 'Anjella')">Piga Kura</button></li>
+                    <li>5. Nandy <button onclick="vote('MWIMBAJI BORA WA KIKE WA BONGO FLAVA WA MWAKA', 'Nandy')">Piga Kura</button></li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>MTUMBUIZAJI BORA WA KIKE WA MWAKA</h4>
+                <ul>
+                    <li>1. Phina - Do Salale <button onclick="vote('MTUMBUIZAJI BORA WA KIKE WA MWAKA', 'Phina')">Piga Kura</button></li>
+                    <li>2. Abigail Chams - Milele <button onclick="vote('MTUMBUIZAJI BORA WA KIKE WA MWAKA', 'Abigail')">Piga Kura</button></li>
+                    <li>3. Zuchu - Nani Remix <button onclick="vote('MTUMBUIZAJI BORA WA KIKE WA MWAKA', 'Zuchu')">Piga Kura</button></li>
+                    <li>4. Da Princess - Lolo <button onclick="vote('MTUMBUIZAJI BORA WA KIKE WA MWAKA', 'Da Princess')">Piga Kura</button></li>
+                    </ul>
+            </div>
+            <div class="category">
+                <h4>MTUMBUIZAJI BORA WA KIUME WA MWAKA</h4>
+                <ul>
+                    <li>1. Diamond Platnumz - Shuu <button onclick="vote('MTUMBUIZAJI BORA WA KIUME WA MWAKA', 'Diamond Platnumz')">Piga Kura</button></li>
+                    <li>2. Alikiba - Sumu <button onclick="vote('MTUMBUIZAJI BORA WA KIUME WA MWAKA', 'Alikiba')">Piga Kura</button></li>
+                    <li>3. Harmonize - Single Again <button onclick="vote('MTUMBUIZAJI BORA WA KIUME WA MWAKA', 'Harmonize')">Piga Kura</button></li>
+                    <li>4. Christian Bella - Tamu <button onclick="vote('MTUMBUIZAJI BORA WA KIUME WA MWAKA', 'Christian Bella')">Piga Kura</button></li>
+                    <li>5. Mbosso - Sele <button onclick="vote('MTUMBUIZAJI BORA WA KIUME WA MWAKA', 'Mbosso')">Piga Kura</button></li>
+                        
+                </ul>
+            </div>
+            <div class="category">
+                <h4>ALBAMU BORA YA MWAKA</h4>
+                <ul>
+                    <li>1. Harmonize - Visit Bongo <button onclick="vote('ALBAMU BORA YA MWAKA', 'Harmonize - Visit Bongo')">Piga Kura</button></li>
+                    <li>2. D Voice - Swahili Kid <button onclick="vote('ALBAMU BORA YA MWAKA', 'D Voice - Swahili Kid')">Piga Kura</button></li>
+                    <li>3. Abigail Chams - 5 <button onclick="vote('ALBAMU BORA YA MWAKA', 'Abigail Chams - 5')">Piga Kura</button></li>
+                    <li>4. Navy Kenzo - Mostly People Want This <button onclick="vote('ALBAMU BORA YA MWAKA', 'Navy Kenzo - Mostly People Want This')">Piga Kura</button></li>
+                    <li>5. Rayvanny - FLowers III <button onclick="vote('ALBAMU BORA YA MWAKA', 'Rayvanny - FLowers III ')">Piga Kura</button></li>
+                
+                </ul>
+            </div>
+                <div class="category">
+                    <h4>MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA</h4>
+                    <ul>
+                        <li>1. Bob Rama - Thania Msomali <button onclick="vote('MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA', 'Bob Rama - Thania Msomali')">Piga Kura</button></li>
+                        <li>2. Father Mauji - Umenibamba <button onclick="vote('MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA', 'Father Mauji - Umenibamba')">Piga Kura</button></li>
+                        <li>3. Thabit Abdul - DSM Sweetheart<button onclick="vote('MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA', 'Thabit Abdul - DSM Sweetheart')">Piga Kura</button></li>
+                        <li>4. Kisaka - Babu Juha<button onclick="vote('MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA', 'Kisaka - Babu Juha')">Piga Kura</button></li>
+                        <li>5. Mfalme Mzee Yususfu - Sina Wema<button onclick="vote('MTUNZI BORA WA MUZIKI WA TAARABU WA MWAKA', 'Mfalme Mzee Yususfu - Sina Wema')">Piga Kura</button></li>
+                    
+                    </ul>
+                </div>
+                    <div class="category">
+                        <h4>MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA</h4>
+                        <ul>
+                            <li>1. S2Kizzy <button onclick="vote('MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA', 'S2Kizzy')">Piga Kura</button></li>
+                            <li>2. Ibra Jacko <button onclick="vote('MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA', 'Ibra Jacko')">Piga Kura</button></li>
+                            <li>3. Trone <button onclick="vote('MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA', 'Trone')">Piga Kura</button></li>
+                            <li>4. Aloneym <button onclick="vote('MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA', 'Aloneym')">Piga Kura</button></li>
+                            <li>5. Mr LG <button onclick="vote('MTOZI (PRODUCER) BORA WA MUZIKI WA BONGO FLEVA WA MWAKA', 'Mr LG')">Piga Kura</button></li>
+                            </ul>
+                    </div>
+                        <div class="category">
+                            <h4>MWIMBAJI BORA WA TAARABU WA MWAKA</h4>
+                            <ul>
+                                <li>1. Malkia Leyla Rashid <button onclick="vote('MWIMBAJI BORA WA TAARABU WA MWAKA', 'Malkia Leyla Rashid')">Piga Kura</button></li>
+                                <li>2. Amina Kidevu <button onclick="vote('MWIMBAJI BORA WA TAARABU WA MWAKA', 'Amina Kidevu')">Piga Kura</button></li>
+                                <li>3. MWinyiMkuu <button onclick="vote('MWIMBAJI BORA WA TAARABU WA MWAKA', ' MWinyiMkuu')">Piga Kura</button></li>
+                                <li>4. Mwansiti Mbwana <button onclick="vote('MWIMBAJI BORA WA TAARABU WA MWAKA', 'Mwansiti Mbwana')">Piga Kura</button></li>
+                                <li>5. Salha <button onclick="vote('MWIMBAJI BORA WA TAARABU WA MWAKA', ' Salha')">Piga Kura</button></li>
+                           
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h4>WIMBO BORA WA TAARABU WA MWAKA</h4>
+                            <ul>
+                                <li>1. Malkia Leyla Rashid - Watu Na Viatu <button onclick="vote('WIMBO BORA WA TAARABU WA MWAKA', 'Malkia Leyla Rashid - Watu Na Viatu')">Piga Kura</button></li>
+                                <li>2. Amina Kidevu - Hatuachani <button onclick="vote('WIMBO BORA WA TAARABU WA MWAKA', 'Amina Kidevu - Hatuachani ')">Piga Kura</button></li>
+                                <li>3. MWinyiMkuu - Bila Yeye Sijiwezi<button onclick="vote('WIMBO BORA WA TAARABU WA MWAKA', ' MWinyiMkuu - Bila Yeye Sijiwezi')">Piga Kura</button></li>
+                                <li>4. Mwansiti Mbwana - Sina Wema <button onclick="vote('WIMBO BORA WA TAARABU WA MWAKA', 'Mwansiti Mbwana - Sina Wema')">Piga Kura</button></li>
+                                <li>5. Salha - DSM Sweetheart<button onclick="vote('WIMBO BORA WA TAARABU WA MWAKA', ' Salha - DSM Sweetheart')">Piga Kura</button></li>
+                           
+                            </ul>
+                        </div>
+                    <div class="category">
+                        <h4>DJ BORA WA MWAKA</h4>
+                        <ul>
+                            <li>1. Dj D Ommy <button onclick="vote('DJ BORA WA MWAKA', 'Dj D Ommy')">Piga Kura</button></li>
+                            <li>2. Dj Seven Worldwide <button onclick="vote('DJ BORA WA MWAKA', ' Dj Seven Worldwide')">Piga Kura</button></li>
+                            <li>3. Dj Shana Mnyamwezi <button onclick="vote('DJ BORA WA MWAKA', 'Dj Shana Mnyamwezi')">Piga Kura</button></li>
+                            <li>2. Dj Ally B <button onclick="vote('DJ BORA WA MWAKA', 'Dj Ally B')">Piga Kura</button></li>
+                            <li>3. Dj Mamie <button onclick="vote('DJ BORA WA MWAKA', 'Dj Mamie')">Piga Kura</button></li>
+                        </ul>
+                    </div>
+                        <div class="category">
+                            <h4>WIMBO BORA WA SINGELI WA MWAKA</h4>
+                            <ul>
+                                <li>1. Dulla Makabila - Nije Ama Nisije <button onclick="vote('WIMBO BORA WA SINGELI WA MWAKA', 'Dulla Makabila - Nije Ama Nisije')">Piga Kura</button></li>
+                                <li>2. Rayvanny Ft Miso Misondo - Kitu Kizito <button onclick="vote('WIMBO BORA WA SINGELI WA MWAKA', 'Rayvanny Ft Miso Misondo - Kitu Kizito')">Piga Kura</button></li>
+                                <li>3. Dogo Elisha - Mr Dj <button onclick="vote('WIMBO BORA WA SINGELI WA MWAKA', 'Dogo Elisha - Mr Dj ')">Piga Kura</button></li>
+                                <li>4. Mchina Mweusi - Nikiacha Kama Nimeachwa <button onclick="vote('WIMBO BORA WA SINGELI WA MWAKA', 'Mchina Mweusi - Nikiacha Kama Nimeachwa')">Piga Kura</button></li>
+                                <li>5. Hemedi Kiduku - Karibu Tanzania <button onclick="vote('WIMBO BORA WA SINGELI WA MWAKA', 'Hemedi Kiduku - Karibu Tanzania')">Piga Kura</button></li>
+                            </ul>
+                        </div>
+                            <div class="category">
+                                <h4>WIMBO BORA WA ASILI WA MWAKA</h4>
+                                <ul>
+                                    <li>1. Sinaubi Zawose - Pesa <button onclick="vote('WIMBO BORA WA ASILI WA MWAKA', 'inaubi Zawose - Pesa')">Piga Kura</button></li>
+                                    <li>2. Erica Lulakwa - Aragoba <button onclick="vote('WIMBO BORA WA ASILI WA MWAKA', 'Erica Lulakwa - Aragoba')">Piga Kura</button></li>
+                                    <li>3. Waza Music Band - Muziki Hauna Mwenyewe <button onclick="vote('WIMBO BORA WA ASILI WA MWAKA', 'Waza Music Band - Muziki Hauna Mwenyewe')">Piga Kura</button></li>
+                                    <li>4. Man Fongo & Nyati Group - Sauti Ya Kumoyo <button onclick="vote('WIMBO BORA WA ASILI WA MWAKA', 'Man Fongo & Nyati Group - Sauti Ya Kumoyo')">Piga Kura</button></li>                                
+                                </ul>
+                            </div>
+                                <div class="category">
+                                    <h4>MTUNZI BORA WA MUZIKI WA DANSI WA MWAKA</h4>
+                                    <ul>
+                                        <li>1. Christian Bella - Tamu <button onclick="vote('MTUNZI BORA WA MUZIKI WA DANSI WA MWAKA', 'Christian Bella')">Piga Kura</button></li>
+                                        <li>2. Dad One Touch - Sidhani <button onclick="vote('MTUNZI BORA WA MUZIKI WA DANSI WA MWAKA', 'ad One Touch')">Piga Kura</button></li>
+                                        <li>3. Masters Keys - Nyoka <button onclick="vote('MTUNZI BORA WA MUZIKI WA DANSI WA MWAKA', 'Masters Keys')">Piga Kura</button></li>
+                                        <li>4. Erasto Machine - Hellena <button onclick="vote('MTUNZI BORA WA MUZIKI WA DANSI WA MWAKA', 'Erasto Machine - Hellena')">Piga Kura</button></li>
+                                         </ul>
+                                    </div>
+                                        <div class="category">
+                                        <h4>MWANDISHI BORA WA MWAKA</h4>
+                                        <ul>
+                                            <li>1. Dulla Makabila <button onclick="vote('MWANDISHI BORA WA MWAKA', 'Dulla Makabila')">Piga Kura</button></li>
+                                            <li>2. Mbosso <button onclick="vote('MWANDISHI BORA WA MWAKA', 'Mbosso')">Piga Kura</button></li>
+                                            <li>3. Jay Melody <button onclick="vote('MWANDISHI BORA WA MWAKA', 'Jay Melody')">Piga Kura</button></li>
+                                            <li>4. Marioo <button onclick="vote('MWANDISHI BORA WA MWAKA', 'Marioo')">Piga Kura</button></li>
+                                            <li>5. Thabiti Abdul <button onclick="vote('MWANDISHI BORA WA MWAKA', 'Thabiti Abdul')">Piga Kura</button></li>
+                                        </ul>
+                                    </div>
+                                        <div class="category">
+                                            <h4>MWANAMUZIKI BORA WA DANCEHALL WA MWAKA</h4>
+                                            <ul>
+                                                <li>1. Dj Davizo <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Dj Davizo')">Piga Kura</button></li>
+                                                <li>2. Bayo The Great <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Bayo The Great')">Piga Kura</button></li>
+                                                <li>3. Baddest 47 <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Baddest 47')">Piga Kura</button></li>
+                                                <li>4. Appy <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Appy')">Piga Kura</button></li>
+                                                <li>5. Hery Sasii <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Hery Sasii')">Piga Kura</button></li>
+                                                <li>6. Saad Mrope <button onclick="vote('MWANAMUZIKI BORA WA DANCEHALL WA MWAKA', 'Saad Mrope')">Piga Kura</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category">
+                                            <h4>WIMBO BORA WA DANCEHALL WA MWAKA</h4>
+                                            <ul>
+                                                <li>1. Dj Davizo - Tinga A Ling <button onclick="vote('WIMBO BORA WA DANCEHALL WA MWAKA', 'Dj Davizo - Tinga A Ling')">Piga Kura</button></li>
+                                                <li>2. Bayo The Great - Nampenda <button onclick="vote('WIMBO BORA WA DANCEHALL WA MWAKA', 'Bayo The Great - Nampenda')">Piga Kura</button></li>
+                                                <li>3. Baddest 47 <button onclick="vote('WIMBO BORA WA DANCEHALL WA MWAKA', 'Baddest 47')">Piga Kura</button></li>
+                                                <li>4. Appy - Hater <button onclick="vote('WIMBO BORA WA DANCEHALL WA MWAKA', 'Appy')">Piga Kura</button></li>
+                                                <li>5. Planner - You <button onclick="vote('WIMBO BORA WA DANCEHALL WA MWAKA', 'Planner')">Piga Kura</button></li>
+                                            </ul>
+                                        </div>
+                                            <div class="category">
+                                                <h4>MWIMBAJI BORA WA SINGELI WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. D Voice <button onclick="vote('MWIMBAJI BORA WA SINGELI WA MWAKA', 'D Voice')">Piga Kura</button></li>
+                                                    <li>2. Dogo Elisha <button onclick="vote('MWIMBAJI BORA WA SINGELI WA MWAKA', 'Dogo Elisha')">Piga Kura</button></li>
+                                                    <li>3. Dulla Makabila <button onclick="vote('MWIMBAJI BORA WA SINGELI WA MWAKA', 'Dulla Makabila')">Piga Kura</button></li>
+                                                    <li>4. Lamona <button onclick="vote('MWIMBAJI BORA WA SINGELI WA MWAKA', 'Lamona')">Piga Kura</button></li>
+                                                    <li>5. Mchina Mweusi <button onclick="vote('MWIMBAJI BORA WA SINGELI WA MWAKA', 'Mchina Mweusi')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWANAMUZIKI BORA CHIPUKIZI WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Appy <button onclick="vote('MWANAMUZIKI BORA CHIPUKIZI WA MWAKA', 'Appy')">Piga Kura</button></li>
+                                                    <li>2. China Kidd <button onclick="vote('MWANAMUZIKI BORA CHIPUKIZI WA MWAKA', 'China Kidd')">Piga Kura</button></li>
+                                                    <li>3. Mocco Denius <button onclick="vote('MWANAMUZIKI BORA CHIPUKIZI WA MWAKA', 'Mocco Denius')">Piga Kura</button></li>
+                                                    <li>4. Yammi <button onclick="vote('MWANAMUZIKI BORA CHIPUKIZI WA MWAKA', 'Yammi')">Piga Kura</button></li>
+                                                    <li>5. Xouh <button onclick="vote('MWANAMUZIKI BORA CHIPUKIZI WA MWAKA', 'Xouh')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Director Wayan <button onclick="vote('MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA', 'Director Wayan')">Piga Kura</button></li>
+                                                    <li>2. Hanscana <button onclick="vote('MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA', 'Hanscana')">Piga Kura</button></li>
+                                                    <li>3. Folex <button onclick="vote('MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA', 'Folex')">Piga Kura</button></li>
+                                                    <li>4. Ivan <button onclick="vote('MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA', 'Ivan')">Piga Kura</button></li>
+                                                    <li>5. Nicklass <button onclick="vote('MWONGOZAJI BORA WA VIDEO YA MUZIKI WA MWAKA', 'Nicklass')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>WIMBO BORA WA REGGAR WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Dimateo Zion - Rhymes Tonight<button onclick="vote('WIMBO BORA WA REGGAR WA MWAKA', 'Dimateo Zion - Rhymes Tonight')">Piga Kura</button></li>
+                                                    <li>2. Mr Kamanzi - Give And Thanks <button onclick="vote('WIMBO BORA WA REGGAR WA MWAKA', 'Mr Kamanzi - Give And Thanks')">Piga Kura</button></li>
+                                                    <li>3. Paul Mihambo - Salamu Zako <button onclick="vote('WIMBO BORA WA REGGAR WA MWAKA', 'Paul Mihambo - Salamu Zako')">Piga Kura</button></li>
+                                                    <li>4. Warriors From The East - Wewe <button onclick="vote('WIMBO BORA WA REGGAR WA MWAKA', 'Warriors From The East - Wewe')">Piga Kura</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWANAMUZIKI BORA WA REGGAR WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Dipper Rato<button onclick="vote('MWANAMUZIKI BORA WA REGGAR WA MWAKA', 'Dipper Rato')">Piga Kura</button></li>
+                                                    <li>2. AkiliMali <button onclick="vote('MWANAMUZIKI BORA WA REGGAR WA MWAKA', 'AkiliMalir')">Piga Kura</button></li>
+                                                    <li>3. Dimateo Zion<button onclick="vote('MWANAMUZIKI BORA WA REGGAR WA MWAKA', 'Dimateo Zion')">Piga Kura</button></li>
+                                                    <li>4. Warriors From The East<button onclick="vote('MWANAMUZIKI BORA WA REGGAR WA MWAKA', 'Warriors From The East')">Piga Kura</button></li>
+                                                    <li>5. Ras Nono<button onclick="vote('MWANAMUZIKI BORA WA REGGAR WA MWAKA', 'Ras Nono')">Piga Kura</button></li>
+                                               
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>WIMBO BORA WA HIPHOP WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Rapcha - Uongo <button onclick="vote('WIMBO BORA WA HIPHOP WA MWAKA', 'Rapcha - Uongo')">Piga Kura</button></li>
+                                                    <li>2. Country Wizzy - Current Situation  <button onclick="vote('WIMBO BORA WA HIPHOP WA MWAKA', 'Country Wizzy - Current Situation')">Piga Kura</button></li>
+                                                    <li>3. Young Lunya - Stupid <button onclick="vote('WIMBO BORA WA HIPHOP WA MWAKA', 'Young Lunya - Stupid')">Piga Kura</button></li>
+                                                    <li>4. Stamina Ft  Bushoke - Machozi <button onclick="vote('WIMBO BORA WA HIPHOP WA MWAKA', 'Stamina Ft  Bushoke - Machozi')">Piga Kura</button></li>
+                                                    <li>5. Joh Makini - Bobea <button onclick="vote('WIMBO BORA WA HIPHOP WA MWAKA', 'Joh Makini - Bobea')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWIMBAJI BORA WA HIPHOP</h4>
+                                                <ul>
+                                                    <li>1. Kontawa <button onclick="vote('MWIMBAJI BORA WA HIPHOP', 'Kontawa')">Piga Kura</button></li>
+                                                    <li>2. Rosa Ree  <button onclick="vote('MWIMBAJI BORA WA HIPHOP', 'Rosa Ree')">Piga Kura</button></li>
+                                                    <li>3. Stamina <button onclick="vote('MWIMBAJI BORA WA HIPHOP', 'Stamina')">Piga Kura</button></li>
+                                                    <li>4. Young Lunya <button onclick="vote('MWIMBAJI BORA WA HIPHOP', 'Young Lunya')">Piga Kura</button></li>
+                                                    <li>5. Joh Makini <button onclick="vote('MWIMBAJI BORA WA HIPHOP', 'Joh Makini')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Black Beats <button onclick="vote('MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA', 'Black Beats')">Piga Kura</button></li>
+                                                    <li>2. Dupy Beatz  <button onclick="vote('MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA', 'Dupy Beatz')">Piga Kura</button></li>
+                                                    <li>3. OmmyDady <button onclick="vote('MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA', 'OmmyDady')">Piga Kura</button></li>
+                                                    <li>4. Ringle Beats <button onclick="vote('MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA', 'Ringle Beats')">Piga Kura</button></li>
+                                                    <li>5. Skizzy <button onclick="vote('MTOZI (PDOUCER) BORA WA HIPHOP WA MWAKA', 'Skizzy')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>WIMBO BORA WA DANSI WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Diamond Platnumz Ft Koffie Olomide - Achii <button onclick="vote('WIMBO BORA WA DANSI WA MWAKA', 'Diamond Platnumz Ft Koffie Olomide - Achii')">Piga Kura</button></li>
+                                                    <li>2. Malaika Band - Kanivuruga  <button onclick="vote('WIMBO BORA WA DANSI WA MWAKA', 'Malaika Band - Kanivuruga')">Piga Kura</button></li>
+                                                    <li>3. Melody Mbassa - Nyoka<button onclick="vote('WIMBO BORA WA DANSI WA MWAKA', 'Melody Mbassa - Nyoka')">Piga Kura</button></li>
+                                                    <li>4. Sikinde Original - Tonge La MWisho <button onclick="vote('WIMBO BORA WA DANSI WA MWAKA', 'Sikinde Original - Tonge La MWisho')">Piga Kura</button></li>
+                                                    <li>5. Twanga Pepeta - Mmbea <button onclick="vote('WIMBO BORA WA DANSI WA MWAKA', 'Twanga Pepeta - Mmbea')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA</h4>
+                                                <ul>
+                                                    <li>1. Charlz Baba <button onclick="vote('MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA', 'Charlz Baba')">Piga Kura</button></li>
+                                                    <li>2. Christian Bella  <button onclick="vote('MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA', 'Christian Bella')">Piga Kura</button></li>
+                                                    <li>3. Melody Mbassa <button onclick="vote('MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA', 'Melody Mbassa')">Piga Kura</button></li>
+                                                    <li>4. Pappi Kocha <button onclick="vote('MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA', 'Pappi Kocha')">Piga Kura</button></li>
+                                                    <li>5. Sarah Masauti<button onclick="vote('MWIMBAJI BORA WA MUZIKI WA DANSI WA MWAKA', 'Sarah Masauti')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>TANZANIA GLOBAL ICONS AWARD</h4>
+                                                <ul>
+                                                    <li>1. Mbwana Samatta <button onclick="vote('Tanzania Global Icons Award', 'Mbwana Samatta')">Piga Kura</button></li>
+                                                    <li>2. Flaviana Matata  <button onclick="vote('Tanzania Global Icons Award', 'Flaviana Matata')">Piga Kura</button></li>
+                                                    <li>3. Clara Luvanga <button onclick="vote('Tanzania Global Icons Award', 'Clara Luvanga')">Piga Kura</button></li>
+                                                    <li>4. Anisa Mpungwe <button onclick="vote('Tanzania Global Icons Award', 'Anisa Mpungwe')">Piga Kura</button></li>
+                                                    <li>5. Ramadhani Brothers <button onclick="vote('Tanzania Global Icons Award', 'Ramadhani Brothers')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+                                            <div class="category">
+                                                <h4>MWANAMUZIKI BORA WA WIMBO WA ASILI</h4>
+                                                <ul>
+                                                    <li>1. Nyati Group <button onclick="vote('Mwanamuziki Bora Wa Wimbo Wa Asili', 'INyati Grouphefu')">Piga Kura</button></li>
+                                                    <li>2. Elizabeth Maliganya <button onclick="vote('Mwanamuziki Bora Wa Wimbo Wa Asili', 'Elizabeth Maliganya')">Piga Kura</button></li>
+                                                    <li>3. Wamwinduka Band <button onclick="vote('Mwanamuziki Bora Wa Wimbo Wa Asili', 'Wamwinduka Band')">Piga Kura</button></li>
+                                                    <li>4. Sinaubi Zawose <button onclick="vote('Mwanamuziki Bora Wa Wimbo Wa Asili', 'Sinaubi Zawose')">Piga Kura</button></li>
+                                                    <li>5. Erica Lulakwa <button onclick="vote('Mwanamuziki Bora Wa Wimbo Wa Asili', 'Erica Lulakwa')">Piga Kura</button></li>
+                                                
+                                                </ul>
+                                            </div>
+        </section>
+        
+        <div class="submit-votes">
+            <button onclick="submitVotes()">Wasiliasha Kura Yako</button>
+        </div>
+    </main>
+    <div id="preview-section" class="preview">
+        <h3>ORODHA YA KURA ULIZOPIGA</h3>
+        <ul id="preview-list"></ul>
+        <div class="submit-votes">
+          <a onclick="window.open('https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640');" href="https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640">
+  <button>Wasilisha Kura</button>
+</a>
+
+<br>
+            <a onclick="window.open('https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640');" href="https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640"><button>Piga Tena</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closePreview()"></div>
+  <footer>
+    <center>
+        <p>&copy; 2024 Tanzania Football Federation. All rights reserved. <a onclick="window.open('https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640');" href="https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640">Privacy Policy</a> | <a onclick="window.open('https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640');" href="https://www.toprevenuegate.com/k7yxfuaz?key=6a3a320d1bd3fe7d34ba691c07e4d640">Terms of Use</a></p></center>
+    </footer>
+</body>
+</html>
